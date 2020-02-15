@@ -15,6 +15,7 @@
 		8420F6DF23F0633E00BB5894 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8420F6DD23F0633E00BB5894 /* LaunchScreen.storyboard */; };
 		84907B4423F83A2200F78D08 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84907B4323F83A2200F78D08 /* SearchResultCell.swift */; };
 		84907B4723F83ACB00F78D08 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84907B4623F83ACB00F78D08 /* SearchResult.swift */; };
+		84B6634823F893880058990D /* NetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6634723F893880058990D /* NetworkDataSource.swift */; };
 		CDF94F26FCCF1BCF1E07D5F3 /* Pods_StarWarsChars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5350F265CF8478CFE76CF2CD /* Pods_StarWarsChars.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		8420F6E023F0633E00BB5894 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84907B4323F83A2200F78D08 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		84907B4623F83ACB00F78D08 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		84B6634723F893880058990D /* NetworkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataSource.swift; sourceTree = "<group>"; };
 		ABFF609F18ACCB9774822B08 /* Pods-StarWarsChars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsChars.debug.xcconfig"; path = "Target Support Files/Pods-StarWarsChars/Pods-StarWarsChars.debug.xcconfig"; sourceTree = "<group>"; };
 		DBA07420B7FF51B445719004 /* Pods-StarWarsChars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsChars.release.xcconfig"; path = "Target Support Files/Pods-StarWarsChars/Pods-StarWarsChars.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				84907B4623F83ACB00F78D08 /* SearchResult.swift */,
+				84B6634723F893880058990D /* NetworkDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8420F6D723F0633C00BB5894 /* MainViewController.swift in Sources */,
+				84B6634823F893880058990D /* NetworkDataSource.swift in Sources */,
 				8420F6D323F0633C00BB5894 /* AppDelegate.swift in Sources */,
 				84907B4723F83ACB00F78D08 /* SearchResult.swift in Sources */,
 				84907B4423F83A2200F78D08 /* SearchResultCell.swift in Sources */,
