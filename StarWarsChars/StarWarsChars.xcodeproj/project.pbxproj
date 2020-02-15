@@ -13,6 +13,8 @@
 		8420F6DA23F0633C00BB5894 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8420F6D823F0633C00BB5894 /* Main.storyboard */; };
 		8420F6DC23F0633E00BB5894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8420F6DB23F0633E00BB5894 /* Assets.xcassets */; };
 		8420F6DF23F0633E00BB5894 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8420F6DD23F0633E00BB5894 /* LaunchScreen.storyboard */; };
+		84907B4423F83A2200F78D08 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84907B4323F83A2200F78D08 /* SearchResultCell.swift */; };
+		84907B4723F83ACB00F78D08 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84907B4623F83ACB00F78D08 /* SearchResult.swift */; };
 		CDF94F26FCCF1BCF1E07D5F3 /* Pods_StarWarsChars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5350F265CF8478CFE76CF2CD /* Pods_StarWarsChars.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,8 @@
 		8420F6DB23F0633E00BB5894 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8420F6DE23F0633E00BB5894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8420F6E023F0633E00BB5894 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84907B4323F83A2200F78D08 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		84907B4623F83ACB00F78D08 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		ABFF609F18ACCB9774822B08 /* Pods-StarWarsChars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsChars.debug.xcconfig"; path = "Target Support Files/Pods-StarWarsChars/Pods-StarWarsChars.debug.xcconfig"; sourceTree = "<group>"; };
 		DBA07420B7FF51B445719004 /* Pods-StarWarsChars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsChars.release.xcconfig"; path = "Target Support Files/Pods-StarWarsChars/Pods-StarWarsChars.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,15 +76,41 @@
 		8420F6D123F0633C00BB5894 /* StarWarsChars */ = {
 			isa = PBXGroup;
 			children = (
-				8420F6D223F0633C00BB5894 /* AppDelegate.swift */,
-				8420F6D423F0633C00BB5894 /* SceneDelegate.swift */,
-				8420F6D623F0633C00BB5894 /* MainViewController.swift */,
+				84907B4523F83AAB00F78D08 /* Model */,
+				84907B4123F839A600F78D08 /* Supporting Files */,
+				84907B4223F839CC00F78D08 /* Cells */,
 				8420F6D823F0633C00BB5894 /* Main.storyboard */,
+				8420F6D623F0633C00BB5894 /* MainViewController.swift */,
 				8420F6DB23F0633E00BB5894 /* Assets.xcassets */,
 				8420F6DD23F0633E00BB5894 /* LaunchScreen.storyboard */,
 				8420F6E023F0633E00BB5894 /* Info.plist */,
 			);
 			path = StarWarsChars;
+			sourceTree = "<group>";
+		};
+		84907B4123F839A600F78D08 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8420F6D423F0633C00BB5894 /* SceneDelegate.swift */,
+				8420F6D223F0633C00BB5894 /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84907B4223F839CC00F78D08 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84907B4323F83A2200F78D08 /* SearchResultCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		84907B4523F83AAB00F78D08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84907B4623F83ACB00F78D08 /* SearchResult.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FD655EDB72C90DCC49F810B1 /* Frameworks */ = {
@@ -208,6 +238,8 @@
 			files = (
 				8420F6D723F0633C00BB5894 /* MainViewController.swift in Sources */,
 				8420F6D323F0633C00BB5894 /* AppDelegate.swift in Sources */,
+				84907B4723F83ACB00F78D08 /* SearchResult.swift in Sources */,
+				84907B4423F83A2200F78D08 /* SearchResultCell.swift in Sources */,
 				8420F6D523F0633C00BB5894 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
