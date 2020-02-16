@@ -9,28 +9,27 @@
 import UIKit
 import Alamofire
 
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    let searchController = UISearchController(searchResultsController: nil)
+    @IBOutlet weak var searchBarInput: UISearchBar!
+
     private var searchResults = [SearchResult]()
+    var emptyData : [String] = []
     var searchToDisplay: [String] = []
-    var isSearchBarEmpty: Bool {
-        return searchController.searchBar.text?.isEmpty ?? true
-    }
     var nameRequested : SearchResult?{
         didSet{
             parceJson()
         }
     }
+    var searchDelayTimer: Timer?
+    var netAccess : NetWork?
+    let network = NetworkDataSource()
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Write Character's name"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
+        netAccess = network
+        searchBarInput.delegate = self
         let tapToDismiss = UITapGestureRecognizer(target: self, action: #selector(dissmissKeyboard))
         tapToDismiss.cancelsTouchesInView = false
         view.addGestureRecognizer(tapToDismiss)
@@ -47,7 +46,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 parceResults.append(items.name)
             }
             searchToDisplay.append(contentsOf: parceResults)
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -57,22 +58,39 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchToDisplay.count
     }
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return "Searched through Star Wars"
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      if let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath) as? SearchResultCell{
+      if let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath) as? SearchResultCell{
             cell.nameLabelText.text = searchToDisplay[indexPath.row]
             return cell
         } else {
             return UITableViewCell()
         }
     }
+    
 }
 
-extension MainViewController: UISearchResultsUpdating{
-    func updateSearchResults(for searchController: UISearchController){
-        
+extension MainViewController{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchDelayTimer?.invalidate()
+        searchDelayTimer = nil
+        searchDelayTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.searchDelay), userInfo: searchText, repeats: false)
+        searchToDisplay = searchText.isEmpty ? emptyData : emptyData.filter({ (stringResult: String) -> Bool in
+            return stringResult.range(of: searchText, options: .caseInsensitive) != nil
+        })
     }
-    func filteredContent(searchText: String){
-      //  searchResult = recievedData.filter(...)
+    
+    @objc func searchDelay(timer: Timer){
+        guard let userInfo = searchDelayTimer?.userInfo as? String else {return}
+        if userInfo != ""{
+            netAccess?.postRequest(name: userInfo)
+        } else {
+            searchToDisplay = emptyData
+            tableView.reloadData()
+        }
+        searchDelayTimer = nil
     }
 }

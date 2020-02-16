@@ -8,15 +8,23 @@
 
 import Foundation
 
-class NetworkDataSource {
-        let urlAccess = "https://swapi.co/api/people/?search=r"
-        let test = "https://swapi.co/api/people/1/"
+class NetworkDataSource: NetWork {
+        let urlAccess = "https://swapi.co/api/people/?search="
         private var searchByName : SearchResult?
     
+    func postRequest(name: String) {
+        searchForCharacter(name: name)
+    }
+    
     func searchForCharacter(name:String){
-            let searchUrl = urlAccess + name
+        let searchUrl = urlAccess + name
         guard let url = URL(string: searchUrl) else {return}
-        URLSession.shared.dataTask(with: url) { (data, responce, error) in
+        let accessUrlSession = URLSession.shared
+        accessUrlSession.dataTask(with: url) { (data, responce, error) in
+            if let error = error{
+                print("Some problems with connection: \(error)")
+                return
+            }
         guard let data = data else {return}
         do {
             let searchReturn = try JSONDecoder().decode(SearchResult.self, from: data)

@@ -11,4 +11,10 @@ import UIKit
 class SearchResultCell: UITableViewCell{
     @IBOutlet weak var nameLabelText : UILabel!
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 }

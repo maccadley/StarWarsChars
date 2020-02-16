@@ -34,7 +34,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0f9-Pw-raD">
                                 <rect key="frame" x="318" y="164" width="91" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="91" id="Akf-pc-tCO"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Akf-pc-tCO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Search"/>
@@ -79,20 +79,32 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="cVF-Od-TgQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="dH9-3z-qOc"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="cVF-Od-TgQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BTi-47-Glk"/>
                             <constraint firstItem="RG2-Ts-9xx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="IgT-M3-6li"/>
+                            <constraint firstItem="cVF-Od-TgQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Iyc-xn-tiv"/>
                             <constraint firstItem="RG2-Ts-9xx" firstAttribute="top" secondItem="0f9-Pw-raD" secondAttribute="bottom" constant="30" id="MHu-fT-lgy"/>
                             <constraint firstItem="RG2-Ts-9xx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Uyc-vw-9UH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0f9-Pw-raD" secondAttribute="trailing" constant="5" id="b27-D8-Ez5"/>
+                            <constraint firstItem="cVF-Od-TgQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cLl-kk-m2q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RG2-Ts-9xx" secondAttribute="trailing" constant="20" id="g6f-ID-2Oe"/>
+                            <constraint firstItem="0f9-Pw-raD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="pzY-4D-1nW"/>
                             <constraint firstItem="0f9-Pw-raD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="76" id="ytc-Gj-nac"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="rrb-oE-IN1"/>
                     <connections>
+                        <outlet property="searchBarInput" destination="cVF-Od-TgQ" id="6l6-4w-edo"/>
                         <outlet property="tableView" destination="RG2-Ts-9xx" id="Y2w-gK-zWa"/>
                     </connections>
                 </viewController>
@@ -120,7 +132,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2V-fc-Xy9">
-                                                    <rect key="frame" x="20" y="28" width="48" height="24"/>
+                                                    <rect key="frame" x="20" y="28" width="214" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -129,6 +141,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="n2V-fc-Xy9" secondAttribute="bottom" constant="13" id="CZ1-d4-duG"/>
                                                 <constraint firstItem="n2V-fc-Xy9" firstAttribute="leading" secondItem="NVe-xI-Hp5" secondAttribute="leadingMargin" id="YHp-vt-WIM"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="n2V-fc-Xy9" secondAttribute="trailing" constant="120" id="adV-AT-gvy"/>
                                                 <constraint firstItem="n2V-fc-Xy9" firstAttribute="top" secondItem="NVe-xI-Hp5" secondAttribute="topMargin" constant="17" id="l52-VS-hLk"/>
                                             </constraints>
                                         </tableViewCellContentView>

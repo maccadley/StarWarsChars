@@ -18,10 +18,10 @@ struct SearchResult: Codable{
 struct CharacterPersonal: Codable{
     var name : String
     var height : String
-    var weight : String
+   /*var weight : String
     var hairColor : String
     var skinColor: String
     var eyeColor : String
     var birthYear : String
-    var gender : String
+    var gender : String*/
 }
