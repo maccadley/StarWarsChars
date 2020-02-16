@@ -28,7 +28,7 @@ class NetworkDataSource: NetWork {
         guard let data = data else {return}
         do {
             let searchReturn = try JSONDecoder().decode(SearchResult.self, from: data)
-            print(searchReturn)
+            print("search results object: \(searchReturn)")
             self.searchByName = searchReturn
         } catch let jsonError {
             print("Error has appeared \(jsonError)")

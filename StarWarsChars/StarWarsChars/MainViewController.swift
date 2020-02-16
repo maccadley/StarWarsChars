@@ -28,6 +28,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchToDisplay = emptyData
         netAccess = network
         searchBarInput.delegate = self
         let tapToDismiss = UITapGestureRecognizer(target: self, action: #selector(dissmissKeyboard))
@@ -44,12 +45,23 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if let results = nameRequested?.results{
             for items in results {
                 parceResults.append(items.name)
+                print(parceResults)
             }
             searchToDisplay.append(contentsOf: parceResults)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    private func displayResults(charName: String) -> [CharacterPersonal]?{
+        var searchResult : [CharacterPersonal]?
+        if let nameCharecter = nameRequested{
+            guard let personName = nameCharecter.results else { return nil }
+            searchResult = personName.filter({
+                $0.name == charName
+            })
+        }; return searchResult
     }
     
     @IBAction func searchButton(_ sender: Any) {
@@ -71,7 +83,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    
 }
+
 
 extension MainViewController{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -81,6 +95,7 @@ extension MainViewController{
         searchToDisplay = searchText.isEmpty ? emptyData : emptyData.filter({ (stringResult: String) -> Bool in
             return stringResult.range(of: searchText, options: .caseInsensitive) != nil
         })
+        parceJson()
     }
     
     @objc func searchDelay(timer: Timer){

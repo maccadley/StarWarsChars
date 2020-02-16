@@ -14,6 +14,7 @@
 		8420F6DC23F0633E00BB5894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8420F6DB23F0633E00BB5894 /* Assets.xcassets */; };
 		8420F6DF23F0633E00BB5894 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8420F6DD23F0633E00BB5894 /* LaunchScreen.storyboard */; };
 		848A1E8423F99A6500328766 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A1E8323F99A6500328766 /* Protocols.swift */; };
+		848A1E8723F9B7FB00328766 /* ExtensionMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A1E8623F9B7FB00328766 /* ExtensionMain.swift */; };
 		84907B4423F83A2200F78D08 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84907B4323F83A2200F78D08 /* SearchResultCell.swift */; };
 		84907B4723F83ACB00F78D08 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84907B4623F83ACB00F78D08 /* SearchResult.swift */; };
 		84B6634823F893880058990D /* NetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6634723F893880058990D /* NetworkDataSource.swift */; };
@@ -31,6 +32,7 @@
 		8420F6DE23F0633E00BB5894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8420F6E023F0633E00BB5894 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		848A1E8323F99A6500328766 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		848A1E8623F9B7FB00328766 /* ExtensionMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionMain.swift; sourceTree = "<group>"; };
 		84907B4323F83A2200F78D08 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		84907B4623F83ACB00F78D08 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		84B6634723F893880058990D /* NetworkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataSource.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		8420F6D123F0633C00BB5894 /* StarWarsChars */ = {
 			isa = PBXGroup;
 			children = (
+				848A1E8523F9B7DF00328766 /* Extensions */,
 				848A1E8223F99A2E00328766 /* Protocols */,
 				84907B4523F83AAB00F78D08 /* Model */,
 				84907B4123F839A600F78D08 /* Supporting Files */,
@@ -99,6 +102,14 @@
 				848A1E8323F99A6500328766 /* Protocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		848A1E8523F9B7DF00328766 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				848A1E8623F9B7FB00328766 /* ExtensionMain.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		84907B4123F839A600F78D08 /* Supporting Files */ = {
@@ -250,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848A1E8723F9B7FB00328766 /* ExtensionMain.swift in Sources */,
 				8420F6D723F0633C00BB5894 /* MainViewController.swift in Sources */,
 				84B6634823F893880058990D /* NetworkDataSource.swift in Sources */,
 				848A1E8423F99A6500328766 /* Protocols.swift in Sources */,
